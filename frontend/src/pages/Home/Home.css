@@ -1,0 +1,34 @@
+body{
+    margin: 0px;
+}
+
+.img{
+    margin-top: 20vh;
+}
+
+.input-text{
+    padding: 10px;
+    border: solid 1px #d0d0d0;
+    width: 30rem;
+    border-right: solid 0px;
+}
+
+.input-submit{
+    padding: 10px 20px;
+    background: #f3f3f3;
+    color: #666666;
+    border: solid 1px #d0d0d0;
+}
+
+.credits{
+    background: #f2f2f2;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+.credits .default {
+    padding: 20px 15px;
+    color: rgba(0,0,0,.54);
+    font-size:.9rem;
+}
