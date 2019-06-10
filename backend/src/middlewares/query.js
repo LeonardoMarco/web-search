@@ -1,10 +1,10 @@
-var nlp = require('compromise');
+const nlp = require('compromise');
 
 module.exports = async (req, res, next) => {
-    var text = nlp(req.body.text).nouns().slice(0, 50).out('frequency')
-    var query = '';
+    const text = nlp(req.body.text).nouns().slice(0, 50).out('frequency');
+    let query = '';
 
-    for(var i = 0; i < text.length; i++){
+    for(let i = 0; i < text.length; i++){
         if(i == text.length-1){
             query += `Palavra LIKE '%${text[i].normal}%' `
         } 

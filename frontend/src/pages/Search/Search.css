@@ -26,6 +26,10 @@
     font-size: 1.3rem
 }
 
-.box-results small{
+.box-results small {
     color: green
+}
+
+a:link {
+    text-decoration: none;
 }
