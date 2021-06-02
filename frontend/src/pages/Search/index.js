@@ -1,43 +1,48 @@
-import React, {  useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import EndPoint from '../../services/Api';
+import Logo from '../../logo.png';
 
 import './Search.css'
 
-function Search (props){
+function Search(props) {
     const [text, setText] = useState('');
     const [results, setResults] = useState([]);
 
-    useEffect(() => result(props.match.params.pesquisa), [])
+    useEffect(() => {
+        result(props.match.params.pesquisa)
+    }, [])
 
-    function search(e){
+    function search(e) {
         e.preventDefault();
 
-        result(text) 
+        result(text)
     }
 
-    function result(text){
+    async function result(text) {
         const search = {
             text: text
         }
 
         EndPoint.search(search)
             .then(res => {
-                //setResults(res.data);
+                setResults(res.data);
                 console.log(res.data)
             }).catch(error => {
                 console.log(error);
             }) 
+
     }
 
-    return(
+    return (
         <div>
             <form className="container flex" onSubmit={search}>
                 <div className="item">
-                    <img src="https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-3-5364976835887104-law.gif" alt="img-google" width="100" />
+                    <Link to="/"><img src={Logo} alt="img-google" width="100" /></Link>
                 </div>
                 <div className="item">
-                    <input type="text" className="input-text" onChange={(e) => setText(e.target.value)}/>
-                    <input type="submit" className="input-submit"/>
+                    <input type="text" className="input-text" onChange={(e) => setText(e.target.value)} />
+                    <input type="submit" className="input-submit" />
                 </div>
             </form>
 
