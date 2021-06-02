@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css'
+import Logo from '../../logo.png';
+
 
 function Home (props){
     const [text, setText] = useState('');
@@ -15,7 +17,7 @@ function Home (props){
             <form onSubmit={search}>
                 <center>
                     <div className="img">
-                        <img src="https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-3-5364976835887104-law.gif" alt="img-google" />
+                        <img src={Logo} alt="img-google" />
                     </div>
                     <input type="text" className="input-text" onChange={(e) => setText(e.target.value)}/>
                     <input type="submit" className="input-submit"/>
@@ -24,7 +26,7 @@ function Home (props){
 
             <div className="credits">
                 <div className="default">
-                    Trabalho: Nome da matéria aqui <br />
+                    Trabalho prático Sistemas Distribuídos  <br />
                     Alunos: Leonardo Marco, Maria Clara, Mariane Luiza, Bernardo Jorge
                 </div>
             </div>
